@@ -1,5 +1,5 @@
-import * as serverlessExpress from "aws-serverless-express";
 import { APIGatewayProxyHandler } from "aws-lambda";
+import * as serverlessExpress from "aws-serverless-express";
 
 import { app } from "./app";
 

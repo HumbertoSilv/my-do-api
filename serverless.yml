@@ -2,7 +2,7 @@ service: my-do
 
 provider:
   name: aws
-  runtime: nodejs12.x
+  runtime: nodejs16.x
   apiGateway:
     shouldStartNameWithService: true
   lambdaHashingVersion: 20201221
@@ -13,7 +13,7 @@ plugins:
 
 functions:
   api:
-    handler: src/index.handler
+    handler: src/interface/index.handler
     events:
       - http:
           path: /{proxy+}

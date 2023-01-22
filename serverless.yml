@@ -13,7 +13,7 @@ plugins:
 
 functions:
   api:
-    handler: src/interface/index.handler
+    handler: src/index.handler
     events:
       - http:
           path: /{proxy+}

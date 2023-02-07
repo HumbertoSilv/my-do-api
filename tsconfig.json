@@ -1,4 +1,3 @@
-
 {
   "compilerOptions": {
     "target": "es2016",
@@ -8,5 +7,6 @@
     "strictPropertyInitialization": false,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
+    "esModuleInterop": true
   }
 }

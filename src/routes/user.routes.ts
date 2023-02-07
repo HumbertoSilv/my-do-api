@@ -5,8 +5,8 @@ const userRouter = Router();
 
 const userController = new UserController();
 
-userRouter.post("/", (req, res) => {
-    userController.createUserHandle(req, res)
+userRouter.post("/accounts", (req, res) => {
+	userController.createUserHandler(req, res)
 });
 
 export { userRouter };

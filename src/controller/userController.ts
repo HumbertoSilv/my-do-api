@@ -8,12 +8,18 @@ class UserController {
 		this.userService = new UserService();
 	}
 
-	public async createUserHandle(request: Request, response: Response): Promise<Response> {
+	public async createUserHandler(request: Request, response: Response) {
 		const data = request.body;
 
-		const user = await this.userService.createUser(data);
+		try {
+			const user = await this.userService.createUser(data);
 
-		return response.status(201).json(user);
+			return response.status(201).json(user);
+		} catch (error) {
+			console.log("createUserHandler", error);
+
+			return response.status(400).json(error);
+		}
 	}
 }
 

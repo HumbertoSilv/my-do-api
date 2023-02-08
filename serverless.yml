@@ -6,6 +6,8 @@ provider:
   apiGateway:
     shouldStartNameWithService: true
   lambdaHashingVersion: 20201221
+  environment:
+    ENV_TEST: test
 
 plugins:
   - serverless-plugin-typescript

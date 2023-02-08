@@ -1,9 +1,12 @@
-
 {
   "compilerOptions": {
-    "target": "es6",
+    "target": "es2016",
     "module": "commonjs",
     "strict": true,
-    "outDir": "build"
+    "outDir": "build",
+    "strictPropertyInitialization": false,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "esModuleInterop": true
   }
 }

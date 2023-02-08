@@ -1,0 +1,33 @@
+version: '3.9'
+
+services:
+  database:
+    image: postgres:10.6-alpine
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=user01
+      - POSTGRES_PASSWORD=0000
+      - POSTGRES_DB=database
+    volumes:
+      - pgdata:/data/postgres
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - PORT=3000
+    network_mode: host
+    env_file:
+      - .env
+    volumes:
+      - ./:/usr/local/apps/myapp/dev
+      - exclude:/usr/local/apps/myapp/dev/node_modules/
+    depends_on:
+      - database
+    
+volumes:
+  exclude:
+  pgdata:
+      driver: local

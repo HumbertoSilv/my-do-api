@@ -6,6 +6,8 @@ provider:
   apiGateway:
     shouldStartNameWithService: true
   lambdaHashingVersion: 20201221
+  environment:
+    ENV_TEST: test
 
 plugins:
   - serverless-plugin-typescript
@@ -13,7 +15,7 @@ plugins:
 
 functions:
   api:
-    handler: src/interface/index.handler
+    handler: src/index.handler
     events:
       - http:
           path: /{proxy+}
